@@ -51,7 +51,4 @@ import weasyprint
 write_report(template, r"C:\Users\Dan_n\Desktop\Curso_Expert_Python_EmpowerData\Degrau_1\Notebooks_Acompanhamento\7_Business_Case\ficha_aluno.pdf", use_default_styling=False)
 
 # Ativar no terminal o conda antes de executar:
-# conda activate weasyprint-en
-# comadno para rodar o script
-
-# python "C:\Users\Dan_n\Desktop\Curso_Expert_Python_EmpowerData\Degrau_1\Notebooks_Acompanhamento\7_Business_Case\script_ficha_academia.py"
+# conda activate weasyprint-env

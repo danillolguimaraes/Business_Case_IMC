@@ -1,65 +1,66 @@
 head
   style.
     .body {
-    font-family: Arial, Helvetica, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
     .dados {
-    background-color: #61759A;
-    color: #ffffff;
+      background-color: #f7d794;
+      color: #000000;
     }
     .dados_aluno {
-    margin-left: 33%;
-    font-size: 24px;
+      margin-left: 33%;
+      font-size: 24px;
     }
     .nome {
-    background-color: #F5F5F5;
-    display: inline-block;
-    width: 150px;
-    margin-bottom: 5px;
+      background-color: #F5F5F5;
+      display: inline-block;
+      width: 150px;
+      margin-bottom: 5px;
     }
     .nome>p {
-    font-weight: bold;
-    margin-left: 5px;
+      font-weight: bold;
+      margin-left: 5px;
     }
     .input {
-    display: inline-block;
-    background-color: #F5F5F5;
-    width: 350px;
+      display: inline-block;
+      background-color: #F5F5F5;
+      width: 350px;
     }
     .input>p {
-    margin-left: 5px;
+      margin-left: 5px;
     }
     .imc {
-    background-color: #FFFFFF;
-    display: inline-block;
-    width: 150px;
-    margin-bottom: 5px;
-    font-size: 10px;
+      background-color: #FFFFFF;
+      display: inline-block;
+      width: 150px;
+      margin-bottom: 5px;
+      font-size: 10px;
     }
     .imc_input_ok {
-    display: inline-block;
-    background-color: #D4EDE4;
-    width: 350px;
-    height: 100px;
-    margin-left: 15px;
+      display: inline-block;
+      background-color: #D4EDE4;
+      width: 350px;
+      height: 100px;
+      margin-left: 15px;
     }
     .imc_input_acima {
-    display: inline-block;
-    background-color: #FFDFDF;
-    width: 350px;
-    height: 100px;
+      display: inline-block;
+      background-color: #FFDFDF;
+      width: 350px;
+      height: 100px;
     }
     .imc_input_ok > p {
-    margin-left: 10px;
+      margin-left: 10px;
     }
     .imc_input_acima > p {
-    margin-left: 10px;
+      margin-left: 10px;
     }
     .rodape {
-    margin-left: 200px;
+      margin-left: 200px;
     }
+
 .logo
-  img(src='https://i.imgur.com/KUiTWQN.png' alt='logo')
+  img(src='https://lgmsolucoes.com/wp-content/uploads/2024/05/branding-lgm.png' alt='logo' style="width:200px")
 br
 br
 h1 Ficha de acompanhamento
@@ -70,52 +71,53 @@ div
   .nome
     p Nome: 
   .input
-    p {{dados["nome"]}}
+    p #{dados["nome"]}
 div
   .nome
     p Idade: 
   .input
-    p {{dados["idade"]}}
+    p #{dados["idade"]}
 div
   .nome
     p Peso: 
   .input
-    p {{dados["peso"]}}
+    p #{dados["peso"]}
 div
   .nome
     p Altura: 
   .input
-    p {{dados["altura"]}}
+    p #{dados["altura"]}
 div
   .nome
-    p C&aacute;lculo IMC: 
+    p Cálculo IMC: 
   .input
-    p {{dados["imc"]}}
-if dados["status"].lower()=='sobrepeso'
+    p #{dados["imc"]}
+if dados["status"].lower() == 'seu peso está acima do normal'
   div
-  .imc
-    p IMC = &iacute;ndice de massa corporal 
-  .imc_input_acima
-    p ATENÇÃO: seu IMC está acima do normal!
-if dados["status"].lower()=='magreza'
-  div
-  .imc
-    p IMC = &iacute;ndice de massa corporal 
-  .imc_input_acima
-    p ATENÇÃO: seu IMC está abaixo do normal!
+    .imc
+      p IMC = índice de massa corporal 
+    .imc_input_acima
+      p ATENÇÃO: seu IMC está acima do normal!
 else
-  div
-  .imc
-    p IMC = &iacute;ndice de massa corporal 
-  .imc_input_ok
-    p PARABÉNS: seu IMC está bom!
+  if dados["status"].lower() == 'seu peso está abaixo do normal'
+    div
+      .imc
+        p IMC = índice de massa corporal 
+      .imc_input_acima
+        p ATENÇÃO: seu IMC está abaixo do normal!
+  else
+    div 
+      .imc
+        p IMC = índice de massa corporal 
+      .imc_input_ok
+        p PARABÉNS: seu IMC está bom!
 br
 br
 br
 .rodape
   .treinador
     p ___________________________
-    p Treinador respons&aacute;vel
+    p Treinador responsável
   br
   .data
     p ___________________________
