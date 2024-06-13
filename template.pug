@@ -97,6 +97,12 @@ if dados["status"].lower()=='sobrepeso'
     p IMC = &iacute;ndice de massa corporal 
   .imc_input_acima
     p ATENÇÃO: seu IMC está acima do normal!
+if dados["status"].lower()=='magreza'
+  div
+  .imc
+    p IMC = &iacute;ndice de massa corporal 
+  .imc_input_acima
+    p ATENÇÃO: seu IMC está abaixo do normal!
 else
   div
   .imc
